@@ -13,8 +13,8 @@
     <div class="box">
         <h3>فرم ثبت اطلاعات کاربران</h3>
         <form action="" id="userform">
-            <input type="text" id="name" placeholder="نام" required>
-            <input type="text" id="family" placeholder="نام خانوادگی" required>
+            <input type="text" id="name" placeholder="نام">
+            <input type="text" id="family" placeholder="نام خانوادگی">
             <input type="email" id="email" placeholder="ایمیل">
             <input type="text" id="job" placeholder="شغل">
             <input type="tel" id="phone" placeholder="تلفن تماس ">
@@ -27,17 +27,20 @@
             <button type="submit">افزودن</button>
         </form>
         <div class="buttons">
-            <button>نمایش همه کاربران</button>
+            <button id="showmodal">نمایش همه کاربران
+            </button>
+           
             <button>پیدا کردن با ایمیل</button>
             <button>آیا همه شاغلن؟</button>
             <button>آیا حداقل یک مرد هست؟</button>
         </div>
 
-        <!-- <div id="overaly">
-            <div id="modal">
-                <h6>لیست کاربران</h6>
+         <div id="overaly">
+                <div id="modal" class="modal">
+                </div>
             </div>
-        </div> -->
+
+
     </div>
 
 
