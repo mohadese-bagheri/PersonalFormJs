@@ -89,3 +89,11 @@ button{
     transition: all 1s;
     width: 100vw;
 }
+
+.modal li{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 1rem;
+    text-align: right;
+}

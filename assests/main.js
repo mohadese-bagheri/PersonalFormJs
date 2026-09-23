@@ -10,7 +10,8 @@ const modal = document.getElementById("modal");
 const overaly = document.getElementById("overaly");
 
 let people = [];
-
+ 
+// افزودن کاربر جدید به لیست
 form.addEventListener("submit", function (e) {
     e.preventDefault()
     console.log();
@@ -36,6 +37,8 @@ form.addEventListener("submit", function (e) {
     console.log(people);
 })
 
+
+// دکمه نمایش همه کاربران
 document.getElementById("showmodal").addEventListener("click",
     () => {
         if (people.length == 0) { modal.innerHTML = `<h3> هنوز کاربری ثبت نشده است.</h3>`; }
@@ -43,7 +46,12 @@ document.getElementById("showmodal").addEventListener("click",
             modal.innerHTML = `<h3> لیست کاربران :</h3> `;
             const list = document.createElement("ul");
 
-            people.map((person, index) => {
+
+            //  people.map((person, index) =>  اگر از map استفاده شود حتما باید return داشته باشیم. 
+            // استفادع میکنیم برای همین از foreach 
+            people.forEach((person, index) => {
+
+                const{name,family,email,job,phone,gender} = person;
                 const li = document.createElement("li");
                 li.innerText = ` ${index + 1} . ${person.name}  ${person.family}
                 ایمیل: ${person.email}
@@ -63,6 +71,8 @@ document.getElementById("showmodal").addEventListener("click",
     }
 )
 
+
+// بستن مدال با کلیلک روی پس زمینه
 overaly.addEventListener("click", () => {
     overaly.style.opacity = "0";
     overaly.style.visibility = "hidden";
