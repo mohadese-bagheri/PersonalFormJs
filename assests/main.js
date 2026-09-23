@@ -80,3 +80,31 @@ overaly.addEventListener("click", () => {
     modal.style.visibility = "hidden";
 
 });
+
+
+// پیدا کردن با ایمیل
+document.getElementById("findByEmail").addEventListener("click",
+    ()=>{
+        const emailToFind =prompt("ایمیل مورد نظر را وارد کنید!");
+        const person = people.find( p => p.email === emailToFind.trim())
+
+        if(person) { 
+            const {name,family,email,job,phone,gender} = person;
+            modal.innerHTML=`
+            <h3> فرد مورد نظر یافت شد::</h3>
+            <p> نام :${name}</p>
+            <p>فامیلی: ${family} </p>
+            <p> شماره تماس: ${phone}</p>
+            <p> شغل: ${job} </p>
+            <p> جنسیت: ${gender} </p>
+            ` ; 
+        }else{
+            modal.innerHTML=`فرد مورد  نظر پیدا نشد.`;
+        }
+
+        overaly.style.opacity="1";
+        overaly.style.visibility="visible";
+        modal.style.opacity="1";
+        modal.style.visibility="visible";
+    }
+)
